@@ -4,14 +4,14 @@ class ApplicationController < ActionController::Base
   # Add your actions below this line
   # ================================
   def homepage
-    render({ :template => "game_templates/rules.html.erb"})
+    render({ :template => "game_templates/rules.html.erb", :layout => "wrapper.html.erb"})
 
   end
 
   def play_rock
     # write code
     # redirect_to("https://www.google.com")
-    render({ :template => "game_templates/user_rock.html.erb"})
+    render({ :template => "game_templates/user_rock.html.erb", :layout => "wrapper.html.erb"})
   end
 
   def play_paper
@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
     @outcome = "lost"
   end
 
-    render({ :template => "game_templates/user_paper.html.erb"})
+    render({ :template => "game_templates/user_paper.html.erb", :layout => "wrapper.html.erb"})
   end
 
   def play_scissors
@@ -39,7 +39,7 @@ class ApplicationController < ActionController::Base
       @outcome = "tied"
     end
     
-    render({ :template => "game_templates/user_scissors.html.erb"})
+    render({ :template => "game_templates/user_scissors.html.erb", :layout => "wrapper.html.erb"})
   end
-  
+
 end
